@@ -1,6 +1,6 @@
 ﻿#pragma once
-#include "Языкъ.h"
-#include "Потокъ.h"
+#include "Языкъ.hpp"
+#include "Потокъ.hpp"
 #include <string>
 
 namespace Русь
