@@ -1,77 +1,77 @@
-#pragma once
-#include "Языкъ.h"
-#include "Потокъ.h"
+п»ї#pragma once
+#include "РЇР·С‹РєСЉ.h"
+#include "РџРѕС‚РѕРєСЉ.h"
 #include <string>
 
-namespace Русь
+namespace Р СѓСЃСЊ
 {
     template<class T, class TTraits = std::char_traits<T>, class TAlloc = std::allocator<T>>
-    class строка_базированная : std::basic_string<T, TTraits, TAlloc>
+    class СЃС‚СЂРѕРєР°_Р±Р°Р·РёСЂРѕРІР°РЅРЅР°СЏ : std::basic_string<T, TTraits, TAlloc>
     {
     public:
-        using база = std::basic_string<T, TTraits, TAlloc>;
+        using Р±Р°Р·Р° = std::basic_string<T, TTraits, TAlloc>;
 
-        база& в_базу()
+        Р±Р°Р·Р°& РІ_Р±Р°Р·Сѓ()
         {
-            return static_cast<база&>(*this);
+            return static_cast<Р±Р°Р·Р°&>(*this);
         }
 
-        const база& в_базу() const
+        const Р±Р°Р·Р°& РІ_Р±Р°Р·Сѓ() const
         {
-            return static_cast<const база&>(*this);
+            return static_cast<const Р±Р°Р·Р°&>(*this);
         }
 
-        строка_базированная() : basic_string()
+        СЃС‚СЂРѕРєР°_Р±Р°Р·РёСЂРѕРІР°РЅРЅР°СЏ() : basic_string()
         {
         }
 
-        explicit строка_базированная(const TAlloc& _Al) noexcept
+        explicit СЃС‚СЂРѕРєР°_Р±Р°Р·РёСЂРѕРІР°РЅРЅР°СЏ(const TAlloc& _Al) noexcept
             : basic_string(_Al)
         {
         }
 
-        строка_базированная(const basic_string& _Right)
+        СЃС‚СЂРѕРєР°_Р±Р°Р·РёСЂРѕРІР°РЅРЅР°СЏ(const basic_string& _Right)
             : basic_string(_Right)
         {
         }
 
-        строка_базированная(const basic_string& _Right, const TAlloc& _Al)
+        СЃС‚СЂРѕРєР°_Р±Р°Р·РёСЂРѕРІР°РЅРЅР°СЏ(const basic_string& _Right, const TAlloc& _Al)
             : basic_string(_Right, _Al)
         {
         }
 
-        строка_базированная(const basic_string& _Right, const size_type _Roff, const TAlloc& _Al = TAlloc())
+        СЃС‚СЂРѕРєР°_Р±Р°Р·РёСЂРѕРІР°РЅРЅР°СЏ(const basic_string& _Right, const size_type _Roff, const TAlloc& _Al = TAlloc())
             : basic_string(_Right, _Roff, _Al)
         {
         }
 
-        строка_базированная(
+        СЃС‚СЂРѕРєР°_Р±Р°Р·РёСЂРѕРІР°РЅРЅР°СЏ(
             const basic_string& _Right, const size_type _Roff, const size_type _Count, const TAlloc& _Al = TAlloc())
             : basic_string(_Right, _Roff, _Count, _Al)
         {
         }
 
-        строка_базированная(_In_reads_(_Count) const T* const _Ptr, const size_type _Count)
+        СЃС‚СЂРѕРєР°_Р±Р°Р·РёСЂРѕРІР°РЅРЅР°СЏ(_In_reads_(_Count) const T* const _Ptr, const size_type _Count)
             : _Mypair(_Zero_then_variadic_args_t{}) {
             _Construct<_Construct_strategy::_From_ptr>(_Ptr, _Count);
         }
 
-        строка_базированная(const T* const _Ptr, const size_type _Count, const TAlloc& _Al)
+        СЃС‚СЂРѕРєР°_Р±Р°Р·РёСЂРѕРІР°РЅРЅР°СЏ(const T* const _Ptr, const size_type _Count, const TAlloc& _Al)
             : basic_string(_Ptr, _Count, _Al)
         {
         }
 
-        строка_базированная(const T* const _Ptr)
+        СЃС‚СЂРѕРєР°_Р±Р°Р·РёСЂРѕРІР°РЅРЅР°СЏ(const T* const _Ptr)
             : basic_string(_Ptr)
         {
         }
     };
 
-    using строка = строка_базированная<char>;
+    using СЃС‚СЂРѕРєР° = СЃС‚СЂРѕРєР°_Р±Р°Р·РёСЂРѕРІР°РЅРЅР°СЏ<char>;
 
     template<class T, class TTraits, class TAlloc>
-    inline потокъ& operator<<(потокъ& левый, const строка_базированная<T, TTraits, TAlloc>& правый)
+    inline РїРѕС‚РѕРєСЉ& operator<<(РїРѕС‚РѕРєСЉ& Р»РµРІС‹Р№, const СЃС‚СЂРѕРєР°_Р±Р°Р·РёСЂРѕРІР°РЅРЅР°СЏ<T, TTraits, TAlloc>& РїСЂР°РІС‹Р№)
     {
-        return левый << правый.в_базу();
+        return Р»РµРІС‹Р№ << РїСЂР°РІС‹Р№.РІ_Р±Р°Р·Сѓ();
     }
 }

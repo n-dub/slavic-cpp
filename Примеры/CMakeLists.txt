@@ -1,4 +1,4 @@
-set(SRC
+﻿set(SRC
     Русь.cpp
 )
 

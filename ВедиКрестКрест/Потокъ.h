@@ -1,15 +1,15 @@
-#pragma once
-#include "Языкъ.h"
+п»ї#pragma once
+#include "РЇР·С‹РєСЉ.h"
 #include <iostream>
 
-namespace Русь
+namespace Р СѓСЃСЊ
 {
-    using потокъ = std::ostream;
+    using РїРѕС‚РѕРєСЉ = std::ostream;
 
-    свой потокъ& молвить = std::cout;
+    СЃРІРѕР№ РїРѕС‚РѕРєСЉ& РјРѕР»РІРёС‚СЊ = std::cout;
 
     template <class T, class TTraits>
-    std::basic_ostream<T, TTraits>& прыгъ_скокъ(std::basic_ostream<T, TTraits>& stream) {
+    std::basic_ostream<T, TTraits>& РїСЂС‹РіСЉ_СЃРєРѕРєСЉ(std::basic_ostream<T, TTraits>& stream) {
         return std::endl(stream);
     }
 }
