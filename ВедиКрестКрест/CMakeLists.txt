@@ -1,7 +1,7 @@
 ﻿set(SRC
-    Языкъ.h
-	Потокъ.h
-	Строка.h
+    Языкъ.hpp
+	Потокъ.hpp
+	Строка.hpp
 )
 
 add_library(SlavicCpp INTERFACE ${SRC})

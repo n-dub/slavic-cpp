@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "Языкъ.h"
+#include "Языкъ.hpp"
 #include <iostream>
 
 namespace Русь
